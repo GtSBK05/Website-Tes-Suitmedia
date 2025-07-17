@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ideas - Suitmedia</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header id="site-header" class="transparent">
+    <div class="container">
+      <div class="logo">Suitmedia</div>
+      <nav>
+        <a href="#">Work</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#" class="active">Ideas</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="banner">
+  <div class="banner-wrapper">
+    <div class="banner-image" style="background-image: url('banner.jpeg');"></div>
+    <div class="banner-overlay"></div>
+  </div>
+  <div class="banner-content">
+    <h1>Ideas</h1>
+    <p>Where all our great things begin</p>
+  </div>
+</section>
+
+  <section class="controls">
+  <div class="left">
+    Showing <span id="showing-count">0</span> of <span id="total-count">0</span>
+  </div>
+  <div class="right">
+    <label>Show per page:
+      <select id="per-page">
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="50">50</option>
+      </select>
+    </label>
+
+    <label>Sort by:
+      <select id="sort">
+        <option value="-published_at">Newest</option>
+        <option value="published_at">Oldest</option>
+      </select>
+    </label>
+  </div>
+</section>
+
+  <div id="posts-container" class="grid"></div>
+
+  <div id="pagination"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

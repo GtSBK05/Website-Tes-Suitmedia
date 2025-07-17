@@ -1,0 +1,209 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Arial', sans-serif;
+  background: #fff;
+  color: #333;
+  line-height: 1.6;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 999;
+  transition: top 0.3s ease;
+}
+header.transparent {
+  background: rgba(255, 255, 255, 0.6);
+}
+header .container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #f60;
+}
+header nav a {
+  margin-left: 20px;
+  color: #333;
+  font-weight: 500;
+}
+header nav a.active {
+  border-bottom: 2px solid #f60;
+}
+
+.banner {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+.banner-wrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.banner-image {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  transform: translateZ(0);
+  clip-path: polygon(0 0, 100% 0, 100% 65%, 0% 100%);
+}
+.banner-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: inherit;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+  pointer-events: none;
+}
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+.banner-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+.banner-content p {
+  font-size: 1.2rem;
+}
+
+.controls {
+  max-width: 1200px;
+  margin: 30px auto 20px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-size: 0.95rem;
+}
+.controls .left,
+.controls .right {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.controls label {
+  font-weight: 500;
+}
+.controls select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px 40px;
+}
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+}
+.card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+.card-content {
+  padding: 15px;
+}
+.card-content small {
+  font-size: 0.8rem;
+  color: #888;
+}
+.card-content .title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 5px;
+  max-height: 4.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+#pagination {
+  text-align: center;
+  padding: 40px 20px;
+}
+#pagination .page-btn {
+  background: transparent;
+  border: 1px solid #ddd;
+  color: #333;
+  padding: 8px 14px;
+  margin: 0 4px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+#pagination .page-btn:hover {
+  background-color: #f60;
+  color: #fff;
+  border-color: #f60;
+}
+#pagination .page-btn.active {
+  background-color: #f60;
+  color: #fff;
+  border-color: #f60;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .banner-content h1 {
+    font-size: 2rem;
+  }
+  .banner-content p {
+    font-size: 1rem;
+  }
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  header nav {
+    margin-top: 10px;
+  }
+}
